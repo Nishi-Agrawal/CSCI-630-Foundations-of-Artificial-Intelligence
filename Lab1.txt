@@ -1,0 +1,24 @@
+Foundations of AI - Lab 1
+
+Nishi Pawan Agrawal(na1748@rit.edu)
+
+The implementation is to find the best path between the start node and the destination. This is the shortest distance between source and destination. 
+
+As per the details for different pixel values I.e. terrain type, rough meadows, lake, etc. I have assumed maximum moving speed to be 40 for areas that can be walked and infinite when the areas are not walkable eg. Impassible vegetation. The ability to move changes with the changing seasons. The speeds will be adjusted for various pixel values in different seasons. 
+
+For example: 
+If the season is fall, leaves fall. In the park, what happens is that paths through the woods can become covered and hard to follow. So the time taken to cross an easy movement forest will increase. So we assign the given terrain types based on the pixel information we are assigning the speed. 
+
+In winter, we use BFS to trace to level 7 of the nodes, and if any of the leaf nodes have water, it will be converted to ice. 
+
+In a similar way, when it is spring, certain terrain paths can turn into muddy roads. It will be hectic to walk over these roads. Thus we will increase the value based on the terrain type. In this case, we check 15 tiles and change those tiles to mud colour.
+The speed will be adjusted accordingly to the difference of terrain. 
+
+The heuristic function is used to calculate the Euclidian distance(3-D distance) between the point and the actual destination along with the constants 10.29 and 7.55. The heuristic is always less than the path cost because the path cost also consists of the terrain value. This along with the local distance is used to set priority in the priority queue. In this, the local distance is the Euclidian distance between the current node and the destination. The terrain value will also be considered in this distance. 
+
+For the output, we get the path travelled through the path that is calculate by each instance of A star. After all iterations are run, we will change the colour of the points that are on the path to red (255,0,0) to create a new output image. 
+
+The total distance is calculated by calculating the Euclidian distance between concurrent points and the total distance to be travelled is printed to the screen. 
+
+
+
