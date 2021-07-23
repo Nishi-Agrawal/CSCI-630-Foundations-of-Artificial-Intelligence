@@ -1,0 +1,14 @@
+?- grandchildrenlist("Elizabeth").
+[Beatrice,Eugenie,Harry,James,Louise,Peter,William,Zara]
+
+?- brothersinlaw("Diana").
+[Andrew,Anne,Edward]
+true.
+
+?- printgreatgrandparents("Zara").
+[George,Mum]
+true.
+
+?- ancestors("Eugenie").
+[Andrew,Elizabeth,George,Mum,Philip,Sarah]
+true.
